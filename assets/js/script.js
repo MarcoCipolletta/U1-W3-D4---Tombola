@@ -2,7 +2,7 @@
 
 const boardContainer = document.querySelector(".board-container");
 const board = document.getElementById("board");
-let extractedNumber = 0;
+const extractedNumbers = [];
 
 // 1) Creare le 90 celle della tombola ed il bottone per estrarre i numeri
 const createBoard = () => {
@@ -20,20 +20,36 @@ const createBoard = () => {
   extractButton.innerText = "Extract";
   boardContainer.appendChild(extractButton);
 
-  //2)
-  extractButton.onclick = () => {
-    extractedNumber = Math.ceil(Math.random() * 90);
+  //3)
+  const selectCell = (number) => {
+    const id = number.toString();
 
-    //3)
-    const selectCell = (number) => {
-      const id = number.toString();
-
-      const cell = document.getElementById(id);
-      cell.classList.add("extracted");
-    };
-    selectCell(extractedNumber);
-    console.log(extractedNumber);
+    const cell = document.getElementById(id);
+    cell.classList.add("extracted");
   };
+
+  //2)
+  const extractNumbers = () => {
+    const totalNumbers = 90;
+
+    //5-EXTRA)
+    if (extractedNumbers.length >= totalNumbers) {
+      alert("Tutti i numeri sono stati estratti.");
+      return;
+    }
+
+    let drawnNumber;
+
+    do {
+      drawnNumber = Math.ceil(Math.random() * totalNumbers);
+    } while (extractedNumbers.includes(drawnNumber));
+
+    selectCell(drawnNumber);
+    extractedNumbers.push(drawnNumber);
+
+    console.log(drawnNumber);
+  };
+  extractButton.onclick = extractNumbers;
 };
 
 window.onload = () => {
