@@ -1,3 +1,8 @@
+// mi salvo tutte le variabili generali
+
+const boardContainer = document.getElementById("board-container");
+const board = document.getElementById("board");
+
 // 1) Creare le 90 celle della tombola
 
 // 2) Creare un bottone per l' estrazione di un numero random da 1 a 90
