@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+header {
+  background-color: beige;
+  padding-block: 3.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 1rem;
+  text-shadow: 3px 3px 7px rgb(0 0 0 / 40%);
+}
+
+.board-container {
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin-inline: auto;
+  margin-block: 2rem;
+  background-color: beige;
+  position: relative;
+}
+
+#board {
+  background-color: rgb(181, 240, 240);
+  width: 90%;
+  margin-inline: auto;
+  margin-block: 1rem;
+  border: 2px solid aqua;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.number {
+  display: inline-block;
+  width: 10%;
+  padding: 1.6rem 1rem;
+  font-size: 1.5rem;
+  border: 1px solid rgb(94, 94, 94);
+  margin-block: 0.5rem;
+  border-radius: 50%;
+}
+
+.number.extracted {
+  background-color: rgb(0, 149, 255);
+  color: whitesmoke;
+}
+
+#extract-number {
+  margin: 1rem;
+  right: 0;
+  position: absolute;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  background-color: aqua;
+}
+
+#extract-number:hover {
+  background-color: rgb(0, 149, 255);
+  color: whitesmoke;
+}
